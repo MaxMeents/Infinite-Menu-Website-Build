@@ -22,7 +22,7 @@ text-decoration: none;
     width: 175px;
   }
 #result_1{
-    width:100%;
+    width:400px;
     position:absolute;
 }
 #result_2{
@@ -71,26 +71,11 @@ text-decoration: none;
     height:600px;
     width:10px;
 }
-  .result_1 > .link:not(.resultHover){
+  .result_1 > .link:not(.resultHover),.result_2 > .link:not(.resultHover){
     line-height: 40px;
     cursor: pointer;
     font-size: 20px;
-    text-align: left;
-    margin-left:40px;
-    color: #0080FF;
-    background: white;
-    font-family: 'Bubblegum Sans', cursive;
-    
-  }
-  #result_2{
-    display:none;
-  }
-  .result_3 > .link:not(.resultHover){
-    line-height: 40px;
-    cursor: pointer;
-    font-size: 20px;
-    text-align: left;
-    margin-left:80px;
+    text-align: center;
     color: #0080FF;
     background: white;
     font-family: 'Bubblegum Sans', cursive;
@@ -101,9 +86,8 @@ text-decoration: none;
     color:white;
     line-height: 40px;
     cursor: pointer;
-    font-size: 20px;    
-    text-align: left;
-    margin-left:40px;
+    font-size: 20px;
+    text-align: center;
     font-family: 'Bubblegum Sans', cursive;
 }
   .openHow{

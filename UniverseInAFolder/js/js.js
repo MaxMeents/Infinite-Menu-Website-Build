@@ -8,12 +8,11 @@ $(document).ready(function(){
     ModalTitle = "Movable Resizable for Youtube & Wikipedia"
     $("body").on("click",".link.fl",function(e){
         l = $(this).find('a').attr('tag');
-        
         lue = _.unescape(l)
         le = _.escape(l)
         BackLDe(le)
         lue = lue.replace(/#/g, "%23")
-        LoadTxt(lue,3)
+        LoadTxt(lue,1)
        
        
     });
@@ -41,30 +40,16 @@ $(document).ready(function(){
             $(".curNav").append(BackLink[i]);
         }
     }
-    function BackLR(){
-        $('.curNav').empty();
-        BackLink.pop()
-        for(i = 0; i < BackLink.length;i++){
-            $(".curNav").append(BackLink[i]);
-        }
-    }
     $("body").on("click",".result_1 > .link",function(e){
         l = $(this).find('a').attr("tag")
         lue = _.unescape(l)
         le = _.escape(l)
         t = $(this).find('a').text();
-        runnext = true;
-        if($("body").find(".toggle_3").hasClass("toggle_3")){
-            runnext = false;
-            $("body").find(".toggle_3").remove();
-            BackLR()
-        }
-        if(/\.txt/i.test(l) && runnext == true){
+        if(/\.txt/i.test(l)){
             le = "https://raw.githubusercontent.com/MaxMeents/Universe-In-A-Folder/main" + le
             lue = _.unescape(le)
             lue = lue.replace(/#/g, "%23")
-            $(this).append("<div class='result_3 toggle_3'></div>")
-            LoadTxt(lue,3);
+            LoadTxt(lue,1);
             t = $(this).find('a').text();
             if(t.length > 18){
                 t = t.substring(0,18);
@@ -75,7 +60,7 @@ $(document).ready(function(){
             BackLink.push(BL);
             BackL();
 
-        }else if(runnext == true){
+        }else{
             if(parser(l)){
                 md(t)
                 //alert(t)
@@ -131,8 +116,8 @@ $(document).ready(function(){
 	    wh = $(window).height()
 	    wwHalf = $(window).width()/2
 	    whHalf = $(window).height()/2
-        $('#result_1').css({width:ww, top:disFTop, left:0,height:wh - disFTop - 10,"max-height":wh - disFTop - 10,"overflow-y":"auto"})
-        //$('#result_2').css({width:wwHalf,left:wwHalf,top:disFTop,height:wh - disFTop - 10,"max-height":wh - disFTop - 10,"overflow-y":"auto"})
+        $('#result_1').css({width:wwHalf, top:disFTop, left:0,height:wh - disFTop - 10,"max-height":wh - disFTop - 10,"overflow-y":"auto"})
+        $('#result_2').css({width:wwHalf,left:wwHalf,top:disFTop,height:wh - disFTop - 10,"max-height":wh - disFTop - 10,"overflow-y":"auto"})
     }
     Resized();
     $(window).resize(function(){
@@ -174,17 +159,17 @@ function LoadTxt(link, whichResult){
         
         for(var i = 0; i < title.length;i++){
                 if (/wikipedia.org/i.test(link[i])){
-                    $( ".result_"+whichResult ).append('<div class="link"><img class="openHow" src="img/wiki.png" /><img class="openHow" src="img/iframe.ico" /><a class="loadtxt" tag="'+ link[i]+'">' + title[i] + '</a></div>');
+                    $( ".result_"+whichResult ).append('<div class="link"><a class="loadtxt" tag="'+ link[i]+'">' + title[i] + '<img class="openHow" src="img/wiki.png" /><img class="openHow" src="img/iframe.ico" /></a></div>');
                 }else if (/youtu\.be/i.test(link[i])){
-                    $( ".result_"+whichResult ).append('<div class="link"><img class="openHow" src="img/youtube.png" /><img class="openHow" src="img/iframe.ico" /><a class="loadtxt" tag="'+ link[i]+'">' + title[i] + '</a></div>');
+                    $( ".result_"+whichResult ).append('<div class="link"><a class="loadtxt" tag="'+ link[i]+'">' + title[i] + '<img class="openHow" src="img/youtube.png" /><img class="openHow" src="img/iframe.ico" /></a></div>');
                 }else if (/\.txt/i.test(link[i])){
-                    $( ".result_"+whichResult ).append('<div class="link"><img class="openHow" src="img/folder.png" /><a class="loadtxt" tag="'+ link[i]+'">' + title[i] + '</a></div>');
+                    $( ".result_"+whichResult ).append('<div class="link"><a class="loadtxt" tag="'+ link[i]+'">' + title[i] + '<img class="openHow" src="img/folder.png" /></a></div>');
                 }else if (/bandcamp\.com/i.test(link[i])){
-                    $( ".result_"+whichResult ).append('<div class="link"><img class="openHow" src="img/bandcamp.png" /><img class="openHow" src="img/iframe.ico" /><a class="loadtxt" tag="'+ link[i]+'">' + title[i] + '</a></div>');
+                    $( ".result_"+whichResult ).append('<div class="link"><a class="loadtxt" tag="'+ link[i]+'">' + title[i] + '<img class="openHow" src="img/bandcamp.png" /><img class="openHow" src="img/iframe.ico" /></a></div>');
                 }else if (/https:\/\/soundcloud.com\//i.test(link[i])){
-                $( ".result_"+whichResult ).append('<div class="link"><img class="openHow" src="img/soundcloud.png" /><img class="openHow" src="img/outside.png" /><a class="loadtxt" tag="'+ link[i]+'">' + title[i] + '</a></div>');
+                $( ".result_"+whichResult ).append('<div class="link"><a class="loadtxt" tag="'+ link[i]+'">' + title[i] + '<img class="openHow" src="img/soundcloud.png" /><img class="openHow" src="img/outside.png" /></a></div>');
                 }else{
-                    $( ".result_"+whichResult ).append('<div class="link"><img class="openHow" src="img/outside.png" /><a class="loadtxt" tag="'+ link[i]+'">' + title[i] + '</a></div>');
+                    $( ".result_"+whichResult ).append('<div class="link"><a class="loadtxt" tag="'+ link[i]+'">' + title[i] + '<img class="openHow" src="img/outside.png" /></a></div>');
                 }
                 
             
