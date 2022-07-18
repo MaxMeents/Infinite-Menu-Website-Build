@@ -1,0 +1,144 @@
+/*
+CSS rules to specify families
+
+font-family: 'Bubblegum Sans', cursive;
+font-family: 'Carter One', cursive;
+font-family: 'Goldman', cursive;
+font-family: 'Marck Script', cursive;
+font-family: 'Merienda', cursive;
+font-family: 'Oregano', cursive;
+font-family: 'Sirin Stencil', cursive;
+*/
+.nos{
+    -webkit-touch-callout: none;
+-webkit-user-select: none;
+-khtml-user-select: none;
+-moz-user-select: none;
+-ms-user-select: none;
+user-select: none;
+text-decoration: none;
+}
+.ytimg{
+    width: 175px;
+  }
+#result_1{
+    width:100%;
+    position:absolute;
+}
+#result_2{
+    width:400px;
+    position:absolute;
+
+}
+.curNavLink{
+    color:white;
+}
+.fl{
+    position:relative;
+    float:left;
+}
+
+.curNav{
+    cursor: pointer;
+    width:100%;
+    height:80px;
+    padding-left:25px;
+    font-size:20px;
+    line-height:80px;
+    background:#0080FF;
+    color:white;
+    text-align:center;
+    font-family: 'Carter One', cursive;
+    border-radius:10px;
+    position:absolute;
+    top:0px;
+    left:0px;
+}
+  #result_1 > .curNav,#result_2 > .curNav{
+    width:0px;
+    height:0px;
+  }
+  .titlebar{
+      background:#0080FF;
+      color:white;
+  }
+.Container{
+    width:100%;
+    height:100%;
+    background:black;
+}
+.ExtraSpace{
+    height:600px;
+    width:10px;
+}
+  .result_1 > .link:not(.resultHover){
+    line-height: 40px;
+    cursor: pointer;
+    font-size: 20px;
+    text-align: left;
+    margin-left:40px;
+    color: #0080FF;
+    background: white;
+    font-family: 'Bubblegum Sans', cursive;
+    
+  }
+  #result_2{
+    display:none;
+  }
+  .result_3 > .link:not(.resultHover){
+    line-height: 40px;
+    cursor: pointer;
+    font-size: 20px;
+    text-align: left;
+    margin-left:80px;
+    color: #0080FF;
+    background: white;
+    font-family: 'Bubblegum Sans', cursive;
+    
+  }
+  .resultHover{
+    background:#0080FF;
+    color:white;
+    line-height: 40px;
+    cursor: pointer;
+    font-size: 20px;    
+    text-align: left;
+    margin-left:40px;
+    font-family: 'Bubblegum Sans', cursive;
+}
+  .openHow{
+    margin-left:10px;  
+    width:30px;
+
+  }
+  .selected{
+    background: #0080FF;
+    color: white;
+  }
+  .selected > a{
+   color: white; 
+  }
+  .iframe{
+    margin: 50px;
+    position: fixed;
+    bottom: 0px;
+    right: 0px;
+    z-index: 2;
+  }
+  .Overlay{
+    position: fixed;
+    top: 0px;
+    z-index: 1;
+    left: 0px;
+    background: black;
+    opacity: 0.5;
+  }
+  iframe{
+    padding: 0.5em;
+    
+    overflow: auto;
+  }
+  a{
+    text-decoration: none;
+  }
+  
